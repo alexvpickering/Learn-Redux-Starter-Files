@@ -1,0 +1,23 @@
+{
+  "name": "from-scratch",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "autoprefixer-stylus": "^0.14.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.0",
+    "stylus": "^0.54.5"
+  },
+  "scripts": {
+    "start": "react-scripts-with-stylus start src/styles/style.styl",
+    "build": "react-scripts-with-stylus build src/styles/style.styl",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "create-react-app-stylus": "^1.1.1"
+  }
+}
