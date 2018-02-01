@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group'
 
 const LikeHeart = ({children, ...props}) => (
   <CSSTransition
@@ -28,9 +28,6 @@ const LikeHeart = ({children, ...props}) => (
       this.setState({show: false})
     }
 
-
-
-
     render() {
       const { post, i, comments } = this.props
       return (
@@ -44,11 +41,13 @@ const LikeHeart = ({children, ...props}) => (
             />
           </Link>
 
-          <LikeHeart in={this.state.show} onEntered={this.resetIn}>
-              <span className="likes-heart" key={post.likes}>
-                {post.likes}
-              </span>
-            </LikeHeart>
+          <LikeHeart
+            in={this.state.show}
+            onEntered={this.resetIn}>
+            <span className="likes-heart" key={post.likes}>
+              {post.likes}
+            </span>
+          </LikeHeart>
 
         </div>
         <figcaption>
