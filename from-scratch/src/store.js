@@ -25,6 +25,7 @@ const store = createStore(
     ...reducers,
     router: routerReducer
   }),
+  defaultState,
   applyMiddleware(middleware)
  )
 
