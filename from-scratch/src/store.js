@@ -1,4 +1,4 @@
-import { combineReducers, createStore, applyMiddleware } from 'redux'
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux'
 import { routerReducer, routerMiddleware } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 import reducers from './reducers/index.js'
@@ -20,13 +20,15 @@ const middleware = routerMiddleware(history)
 
 // Add the reducer to your store on the `router` key
 // Also apply our middleware for navigating
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const store = createStore(
   combineReducers({
     ...reducers,
     router: routerReducer
   }),
   defaultState,
-  applyMiddleware(middleware)
+  composeEnhancers(applyMiddleware(middleware))
  )
 
 export default store
